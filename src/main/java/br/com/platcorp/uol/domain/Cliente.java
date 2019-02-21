@@ -1,11 +1,13 @@
 package br.com.platcorp.uol.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,6 +25,9 @@ public class Cliente implements Serializable {
 	
 	private Integer idade;
 
+	
+	@OneToMany(mappedBy="cliente")
+	private List<Historico> historico;
 
 	
 	//Construtor vazio
@@ -64,6 +69,15 @@ public class Cliente implements Serializable {
 	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
+
+	public List<Historico> getHistorico() {
+		return historico;
+	}
+
+	public void setHistorico(List<Historico> historico) {
+		this.historico = historico;
+	}
+
 
 
 	

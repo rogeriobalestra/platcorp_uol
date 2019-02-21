@@ -1,6 +1,7 @@
 package br.com.platcorp.uol.resources;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.platcorp.uol.domain.Cliente;
 import br.com.platcorp.uol.domain.Historico;
 import br.com.platcorp.uol.services.ClienteService;
+import br.com.platcorp.uol.services.GeolocalizacaoService;
 import br.com.platcorp.uol.services.HistoricoService;
 
 
@@ -31,6 +33,9 @@ public class ClienteResource {
 	
 	@Autowired
 	private HistoricoService historicoService;
+	
+	@Autowired
+	private GeolocalizacaoService geolocalizacaoService;
 	
 	
 	/**
@@ -49,9 +54,10 @@ public class ClienteResource {
 	 */
 	@PostMapping
 	public ResponseEntity<Void> insert(@Valid @RequestBody Cliente cliente) {
+		
 		Cliente obj = service.insert(cliente);
 		
-		historicoService.save(cliente.getId());
+		historicoService.save(obj);
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().
 				path("/id").buildAndExpand(obj.getId()).toUri();

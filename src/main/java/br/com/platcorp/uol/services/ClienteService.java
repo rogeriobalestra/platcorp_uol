@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import br.com.platcorp.uol.domain.Cliente;
 import br.com.platcorp.uol.repositories.ClienteRepository;
 import br.com.platcorp.uol.services.exceptions.ObjectNotFoundException;
@@ -18,6 +18,7 @@ public class ClienteService {
 	
 	
 	/* Insere Cliente */
+	@Transactional
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
 		return repo.save(obj);
