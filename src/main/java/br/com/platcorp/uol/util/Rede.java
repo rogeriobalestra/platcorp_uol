@@ -1,4 +1,4 @@
-package br.com.platcorp.uol.services;
+package br.com.platcorp.uol.util;
 
 import java.net.HttpURLConnection;
 import java.net.URL;

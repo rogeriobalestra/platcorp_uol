@@ -12,6 +12,7 @@ import br.com.platcorp.uol.dto.ClimaDTO;
 import br.com.platcorp.uol.dto.GeolocalizacaoDTO;
 import br.com.platcorp.uol.repositories.HistoricoRepository;
 import br.com.platcorp.uol.services.exceptions.ObjectNotFoundException;
+import br.com.platcorp.uol.util.Rede;
 
 @Service
 public class HistoricoService {
