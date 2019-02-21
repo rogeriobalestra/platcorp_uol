@@ -1,7 +1,6 @@
 package br.com.platcorp.uol.resources;
 
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -18,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.platcorp.uol.domain.Cliente;
-import br.com.platcorp.uol.domain.Historico;
 import br.com.platcorp.uol.services.ClienteService;
-import br.com.platcorp.uol.services.GeolocalizacaoService;
 import br.com.platcorp.uol.services.HistoricoService;
 
 
@@ -34,8 +31,6 @@ public class ClienteResource {
 	@Autowired
 	private HistoricoService historicoService;
 	
-	@Autowired
-	private GeolocalizacaoService geolocalizacaoService;
 	
 	
 	/**

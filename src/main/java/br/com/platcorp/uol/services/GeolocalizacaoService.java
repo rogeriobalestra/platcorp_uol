@@ -1,13 +1,9 @@
 package br.com.platcorp.uol.services;
 
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.platcorp.uol.domain.Historico;
 import br.com.platcorp.uol.dto.ClimaDTO;
 import br.com.platcorp.uol.dto.DistanceDTO;
 import br.com.platcorp.uol.dto.GeolocalizacaoDTO;
